@@ -1,0 +1,19 @@
+.Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #070049;
+    height:10vh;
+}
+.Image108{
+width: 3vw;
+height:5.5vh;
+margin-right: 1.5vw;
+}
+.HeaderText{
+    font-size: 40px;
+    margin-top: 20px;
+    color: white;
+}

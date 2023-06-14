@@ -1,54 +1,22 @@
-import { useEffect, useLayoutEffect, useState } from "react";
-import {
-  MapContainer,
-  TileLayer,
-  useMap,
-  Marker,
-  Popup,
-  useMapEvent,
-} from "react-leaflet";
-
-import Bamza_108_Logo from "./images/Bamza_108.png";
+import { useState } from "react";
 import "./App.css";
+import Header from "./components/Header/Header.js";
+import Map from "./components/Map/Map.js";
+import Navbar from "./components/Navbar/Navbar.js";
 
 function App() {
-  const [image, setImage] = useState("");
-
+  const [search, setSearch] = useState()
+  const changeSearch = (value) => {
+    setSearch(value)
+  }
+  
   return (
-    <div style={{ backgroundColor: "#00003f" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div style={{ marginRight: "1.5vw" }}>
-          <img style={{ width: "3vw", height: "5.5vh" }} src={Bamza_108_Logo} />
-        </div>
-        <h1 style={{ fontSize: "40px", marginTop: "20px", color: "white" }}>
-          {" "}
-          מפת החירום של 108
-        </h1>
+    <div dir="rtl">
+      <Header />
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Navbar changeSearch={changeSearch}/>
+        <Map search={search}/>
       </div>
-      <MapContainer
-        style={{ height: "86vh", width: "100vw" }}
-        center={[31.042, 34.8]}
-        zoom={8}
-        scrollWheelZoom={false}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="http://localhost:8000/{z}/{x}/{y}.png"
-        />
-        <Marker position={[32.085, 34.78]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </MapContainer>
     </div>
   );
 }

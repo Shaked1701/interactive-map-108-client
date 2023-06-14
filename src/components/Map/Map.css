@@ -1,4 +1,4 @@
-/* required styles */
+
 
 .leaflet-pane,
 .leaflet-tile,
@@ -394,9 +394,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 /* Default icon URLs */
 .leaflet-default-icon-path {
-	/* background-image: url(../src/images/location-pin.png); */
+	/* background-image: url(images/marker-icon.png); */
 	}
-    /* yuval */
 
 
 /* attribution and scale controls */
@@ -639,3 +638,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	margin-left: -12px;
 	border-right-color: #fff;
 	}
+
+/* man-made css starts here ! 	 */
+
+
